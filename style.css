@@ -1,0 +1,237 @@
+/** RESET **/
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+/** CSS VARIABLES **/
+:root {
+    --font-primary : "Roboto", sans-serif;
+    --font-secondary : "Montserrat", sans-serif;
+
+    --fs : clamp(1rem, 1.2rem, 1.5rem);
+
+    --bg-primary-color : #0a0a23;
+    --bg-btn-color : rgb(141, 165, 6);
+
+    --color : #fff;
+
+    --border-radius : 10px;
+
+    --padding : 10px;
+
+    --ls : 0.1em;
+
+    --cursor : pointer;
+}
+/** GENERAL STYLES **/
+html, body {
+    font-family: var(--font-secondary);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+/** HEADER **/
+header {
+    position: sticky;
+    top: 0;
+}
+header h1 {
+    text-align: center;
+    color: var(--color);
+    background-color: var(--bg-primary-color);
+    padding: var(--padding);
+    width: 100vw;
+    font-family: var(--font-primary);
+    letter-spacing: var(--ls);
+}
+/** MAIN **/
+main {
+    margin: auto;
+    width: 900px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 1;
+    gap: 50px;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    box-shadow: 5px 2px 5px var(--bg-btn-color);
+}
+
+main h2 {
+    font-weight: normal;
+    font-family: var(--font-primary);
+    letter-spacing: var(--ls);
+}
+#add-or-update-task-btn {
+    margin:  0 auto;
+    padding: var(--padding) 50px;
+    color: var(--color);
+    background-color: var(--bg-btn-color);
+    border: none;
+    border-radius: var(--border-radius);
+    box-shadow: 5px 2px 2px var(--bg-btn-color);
+    font-size: var(--fs);
+    cursor: var(--cursor);
+    margin-top: 50px;
+}
+#confirm-close-dialog {
+    padding: 10px;
+    margin: 10px auto;
+    border-radius: 15px;
+  }
+  
+.confirm-close-dialog-btn-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+  }
+  
+.discard-message-text {
+    font-weight: bold;
+    font-size: 1.5rem;
+  }
+.btn {
+    padding: 2px var(--padding);
+    color: var(--color);
+    background-color: var(--bg-btn-color);
+    border: none;
+    border-radius: var(--border-radius);
+    font-size: 1em;
+    cursor: var(--cursor);
+    margin-top: 10px;
+}
+.btn2 {
+    margin-left: 20px;
+}
+
+form {
+    margin: auto;
+    width: 450px;
+    border: 1px solid var(--bg-primary-color);
+    padding: 20px;
+    border-radius: var(--border-radius); 
+}
+
+.hidden {
+    display: none;
+}
+
+.main-form-heading-and-icon {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--bg-primary-color);
+}
+.main-form-title {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+}
+.main-form-date {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    gap: 10px;
+}
+.main-form-description {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    gap: 10px;
+}
+.times-icon {
+    position: relative;
+    font-size: 3rem;
+    color: red;
+    cursor: var(--cursor);
+    margin-top: -15px;
+}
+.times-icon:hover::before {
+    content: attr(data-info);
+    border-radius: 10px;
+    padding: 5px;
+    color : var(--color);
+    background-color: red;
+    font-size: 1rem;
+    position: absolute;
+    top: -20px;
+}
+.form-add-task-btn{
+    padding: var(--padding);
+    color: var(--color);
+    background-color: var(--bg-btn-color);
+    border: none;
+    border-radius: var(--border-radius);
+    font-size: var(--fs);
+    cursor: var(--cursor);
+    margin: 20px 110px 0px;
+}
+input, textarea {
+    padding: 15px;
+    border-radius: var(--border-radius);
+    outline: none;
+}
+label {
+    font-size: var(--fs);
+}
+/** FOOTER **/
+footer {
+    color: var(--color);
+    background-color: var(--bg-primary-color);
+    width: 100vw;
+}
+footer p {
+    text-align: center;
+    padding: var(--padding);
+}
+
+
+/** MEDIA QUERIES FOR SMALL SCREEN **/
+@media screen and (max-width: 768px) {
+    main {
+        max-width: 100%;
+        padding: 10px;
+    }
+
+    form {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .form-add-task-btn {
+        margin: 20px auto 0;
+    }
+}
+@media screen and (max-width: 480px) {
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    main {
+        width: 100%;
+        padding: 5px;
+    }
+
+    form {
+        width: 100%;
+        padding: 5px;
+    }
+
+    .form-add-task-btn {
+        margin: 10px auto 0;
+        padding: var(--padding);
+    }
+
+    .times-icon {
+        font-size: 2rem;
+    }
+
+    .discard-message-text {
+        font-size: 1.2rem;
+    }
+}
