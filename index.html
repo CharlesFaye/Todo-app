@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!--GOOGLE FONTS-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <!--MAIN STYLESHEET-->
+    <link rel="stylesheet" href="./style.css">
+    <title>Todo App</title>
+</head>
+<body>
+    <!--HEADER-->
+    <header>
+        <h1 class="main-title">Application de gestion de tâches</h1>
+    </header><!--END HEADER-->
+    <!--MAIN-->
+    <main class="main">
+        <button id="add-or-update-task-btn">Ajouter une nouvelle tâche</button>
+            <!--FORM-->
+            <form action="#" id="form" name="formulaire" class="hidden">
+                <div class="main-form-heading-and-icon">
+                <h2 class="main-form-h2">Nouvelle tâche</h2>
+                <p class="times-icon" data-info="Annuler">&times;</p>
+                </div>
+                <div class="main-form-title">
+                    <label for="titre">Title</label>
+                    <input type="text" value="" id="titre" required>
+                </div>
+                <div class="main-form-date">
+                    <label for="date">Date de création</label>
+                    <input type="date" id="date" value="" required>
+                </div>
+                <div class="main-form-description">
+                    <label for="description">Description</label>
+                    <textarea  id="description" cols="50" rows="10" required></textarea>
+                </div>
+                <button type="submit" class="form-add-task-btn">Ajouter une tâche</button>
+            </form><!--END FORM-->
+            
+        </div>
+            <!--DIALOG BOX-->
+            <dialog id="confirm-close-dialog">
+                <form method="dialog">
+                <p class="discard-message-text">Voulez-vous supprimer les changements non sauvegardés ?</p>
+                    <div class="confirm-close-dialog-btn-container">
+                        <button id="cancel-btn" class="btn">Annuler</button>
+                        <button id="confirm-btn" class="btn btn2">Confirmer</button>
+                    </div>
+                </form>
+            </dialog><!--END DIALOG BOX-->
+            <div id="tasks-container"></div>
+    </main><!--END MAIN-->
+    <!--FOOTER-->
+    <footer>
+        <p>&copy; Copyright <span class="current-year"></span> Charles Simel Faye.</p>
+    </footer><!--END FOOTER-->
+<!--MAIN JS FILE-->
+  <script src="./main.js"></script>  
+</body>
+</html>
