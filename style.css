@@ -115,8 +115,18 @@ form {
     border: 1px solid var(--bg-primary-color);
     padding: 20px;
     border-radius: var(--border-radius); 
+    animation: popup 2s ease-in-out;
 }
-
+@keyframes popup {
+    0% {
+        transform: translateY(0);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(-50px);
+        opacity: 1;
+    }
+}
 .hidden {
     display: none;
 }
